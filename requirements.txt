@@ -1,0 +1,7 @@
+
+streamlit 
+pandas 
+numpy
+matplotlib
+Pillow==8.2.0
+streamlit_option_menu

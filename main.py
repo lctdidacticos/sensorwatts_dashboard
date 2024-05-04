@@ -1,6 +1,8 @@
 
 #Pagina principal del App multipaginas
 #streamlit run c:/LCT_PYTHON/STREAMLIT/SENSOR_WATTS/SW_DASHBOARD/main.py
+#URL de la App SensorWatts en GitHub
+#https://github.com/lctdidacticos/sensorwatts_dashboard
 
 import streamlit as st
 import pandas as pd
@@ -9,6 +11,7 @@ from pot_pag_2 import pot
 from energ_pag_3 import energ
 from fase_pag_4 import fase
 from frec_pag_5 import frec
+from costo_pag_6 import costo
 from PIL import Image
 
 # Título de la aplicación
@@ -34,7 +37,7 @@ else:
 if datos is not None:  
 # Crear un sidebar para seleccionar la página
     
-    page = st.sidebar.selectbox("Seleccione la medicion", ["Voltaje & Corriente", "Potencias", "Energias", "Fase", "Frecuencia"])
+    page = st.sidebar.selectbox("Seleccione la medicion", ["Voltaje & Corriente", "Potencias", "Energias", "Fase", "Frecuencia", "Costo Energia"])
 
 # Mostrar la página seleccionada
     if page == "Voltaje & Corriente":
@@ -47,4 +50,7 @@ if datos is not None:
         fase(datos)  
     elif page == "Frecuencia":
         frec(datos)
+    elif page == "Costo Energia":
+        costo(datos)    
+        
       
