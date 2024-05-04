@@ -17,7 +17,9 @@ from PIL import Image
 # Título de la aplicación
 
 c1,c2 = st.columns([0.25,1])
-icono_path = "C:/LCT_PYTHON/STREAMLIT/SENSOR_WATTS/SW_DASHBOARD/sw_imagen/SW_ICON.png"
+
+#SENSOR_WATTS\SW_DASHBOARD\sw_imagen
+icono_path = "sw_imagen/SW_ICON.png" 
 icono = Image.open(icono_path)
 with c1:
     st.image(icono, width= 120)
