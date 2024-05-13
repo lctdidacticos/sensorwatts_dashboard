@@ -23,8 +23,7 @@ def fase(datos, ciclos=2):#Muestra n ciclos
     onda_voltaje = voltaje_max * np.sin(2 * np.pi * frecuencia_promedio * tiempo)
     
     # Cálculo de la fase y la corriente basándose en el factor de potencia
-    
-        
+            
     inductivo = df[df['RLC'] == 'Ind']['Factor de Potencia'].mean()
     corrienteL = df[df['RLC'] == 'Ind']['Corriente'].mean()
     potenciaL = df[df['RLC'] == 'Ind']['Potencia'].mean()
@@ -32,7 +31,8 @@ def fase(datos, ciclos=2):#Muestra n ciclos
     aparenteL = df[df['RLC'] == 'Ind']['Potencia Aparente'].mean()
     
     resistivo = df[df['RLC'] == 'Res']['Factor de Potencia'].mean()
-    corrienteR = df[df['RLC'] == 'Res']['Corriente'].mean()
+    df_corrienteR = df[(df['RLC'] == 'Res') & (df['Corriente']!=0)]
+    corrienteR = df_corrienteR["Corriente"].mean()
     
     capacitivo = df[df['RLC'] == 'Cap']['Factor de Potencia'].mean()
     corrienteC = df[df['RLC'] == 'Cap']['Corriente'].mean()
