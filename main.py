@@ -21,7 +21,7 @@ from PIL import Image
 c1,c2 = st.columns([0.25,0.75])#Cambio de (0.25,1) a (0.25,0.75)
 
 #SENSOR_WATTS\SW_DASHBOARD\sw_imagen
-icono_path = "SW_ICON.png" 
+icono_path = sw_imagen/"SW_ICON.png" 
 icono = Image.open(icono_path)
 with c1:
     st.image(icono, use_container_width=True)
