@@ -29,7 +29,7 @@ def volt(datos):
 
     volt = df_sw['Voltaje']
     amp = df_sw['Corriente']
-    tiempo = df_sw['Tiempo']
+    tiempo = df_sw['Tiempo'].dropna()
     cant = len(tiempo) #Igual a la cantidad de mediciones de Tiempo
 
 #Adiciona un slider para control de la escala de Tiempo
